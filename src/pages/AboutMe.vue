@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
-  <div id="About">
-    <div class="w-full flex flex-col text-center items-center">
+  <div>
+    <div id="Home" class="w-full flex flex-col text-center items-center">
       <div
         class="z-[3] text-[32px] leading-[3rem] tracking-[1px] mb-[10px] md:text-[60px] md:leading-[5rem]"
       >
@@ -29,7 +29,7 @@
         I'm a huge lover of crafting products that people love.
       </p>
     </div>
-    <div class="mt-[40px]">
+    <div id="About" class="mt-[40px]">
       <p class="text-[18px] font-normal text-white md:text-[22px]">About</p>
       <p class="mt-[20px] md:text-[16px]">
         Experienced Backend Engineer with over 5 years of hands-on experience in

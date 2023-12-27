@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "shadow-gray": "rgba(114, 114, 114, 0.2)",
+        "shadow-gray-cover": "rgba(114, 114, 114, 0.7)",
       },
     },
   },

@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, watch, ref } from "vue";
+import { useRouter } from "vue-router";
 
 const navBar = [
   "Home",
@@ -9,6 +10,7 @@ const navBar = [
   "Weather",
   "Contact",
 ];
+const router = useRouter();
 
 const props = defineProps(["val"]);
 const emit = defineEmits(["update:val"]);
@@ -26,10 +28,12 @@ watch(
     }
   }
 );
+
 onMounted(() => {
   window.addEventListener("scroll", () => {
     scroll.value = window.scrollY;
   });
+  console.log(router.currentRoute.value.hash);
 });
 </script>
 <template>
@@ -50,12 +54,16 @@ onMounted(() => {
         v-for="item in navBar"
         :key="item"
         class="m-[5px] text-[10px] px-[5px] py-[5px] sm:text-[14px] md:text-[16px] lg:mx-[10px] lg:text-[18px] lg:px-[20px] lg:py-[8px]"
+        :class="
+          router.currentRoute.value.hash.replace('#', '') == item &&
+          'bg-shadow-gray-cover'
+        "
         flat
         rounded
         no-caps
         @click="emit('update:val', item)"
       >
-        <a :href="`#${item}`"> {{ item }}</a>
+        <router-link :to="`#${item}`">{{ item }}</router-link>
       </q-btn>
     </div>
   </div>
