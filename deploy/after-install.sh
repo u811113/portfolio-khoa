@@ -3,7 +3,7 @@
 cd /home/ec2-user/api
 yarn
 yarn build
-cd dist
+cd dist/spa
 sudo mv * /var/www/html
 
 
